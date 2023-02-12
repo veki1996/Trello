@@ -1,0 +1,12 @@
+.CreateCardBtn{
+    border: none;
+    background-color: rgb(10, 250, 10);
+}
+.inputs{
+    width: 200px;
+}
+.inputs input{
+    width: 200px;
+    height: 20px;
+    
+}
