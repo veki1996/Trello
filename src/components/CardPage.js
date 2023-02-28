@@ -26,7 +26,7 @@ const CardPage = (props) => {
     }
 
     const names = props.name ? Object.values(props.name) : [];
-    let names2 = names.map((item) => <Redovi lines={item.name} title={item.title} columnUUid={props.todo.uuid} uuid={item.uuid} />)
+    let names2 = names.map((item) => <Redovi lines={item.name} title={item.title} key={item.uuid} columnUUid={props.todo.uuid} uuid={item.uuid} />)
     const niz = [
         props.column
     ]

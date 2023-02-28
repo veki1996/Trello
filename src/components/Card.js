@@ -16,7 +16,7 @@ const Card = (props) => {
             }
         })
     }, [])
-    const aray = todos.map(todo =>  <CardPage openCard={props.openCard} OpenModal={props.OpenModal} todo={todo} name={todo.Names} column={todo.todo}/>)
+    const aray = todos.map(todo =>  <CardPage openCard={props.openCard} OpenModal={props.OpenModal} todo={todo} key={todo.todo} name={todo.Names} column={todo.todo}/>)
     
     return (
         <div className={Clasess.Column}>
