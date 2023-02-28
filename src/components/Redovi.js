@@ -5,8 +5,7 @@ import { ref, remove } from 'firebase/database'
 import { db } from '../Hooks/firebase'
 import Edit from './Imeges/edit.png'
 import Del from './Imeges/delete.png'
-import { DndProvider, useDrag } from 'react-dnd'
-import { HTML5Backend } from 'react-dnd-html5-backend' 
+
 const Redovi = (props) => {
    
     const Ctx = useContext(CartCtxTF)
@@ -24,7 +23,7 @@ const Redovi = (props) => {
     }
 
     return (
-        <DndProvider backend={HTML5Backend} >
+    
         <div   className={Clasess.lines}>
 
              <h3  className={Clasess.ha3} >{props.lines}</h3> 
@@ -39,7 +38,7 @@ const Redovi = (props) => {
                 </>
             </div>
         </div>
-        </DndProvider>
+     
     )
 }
 export default Redovi 
