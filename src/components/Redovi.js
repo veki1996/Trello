@@ -29,11 +29,11 @@ const Redovi = (props) => {
              <h3  className={Clasess.ha3} >{props.lines}</h3> 
             <div className={Clasess.btns}>
                 <>
-                    <img src={Del} />
+                    <img alt='DelleteIMG' src={Del} />
                     <button onClick={RemoveCard}>- Dellete</button>
                 </>
                 <>
-                    <img src={Edit} />
+                    <img alt='EditIMG'  src={Edit} />
                     <button onClick={IliesOnClick}>+Edit</button>
                 </>
             </div>
