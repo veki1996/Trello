@@ -2,14 +2,12 @@ import Card from "./components/Card";
 import CartProvider from "./components/Store/CartProvider";
 import Cart from "./components/Cart/Cart";
 import { useState, useContext } from "react";
-import CartContext from "./components/Store/cart-context";
 import CartCtxTF from "./components/Store/auth-context";
 import CartForCard from "./components/Cart/CartForCard";
 import UpdateCard from "./components/Cart/UpdateCard";
 import HorizontalMenu from "./components/Menu/Menu";
 function App() {
   const NewUpdateAddCard = useContext(CartCtxTF)
-  const Ctx = useContext(CartContext)
   const [modal, setModal] = useState(false)
   const [modalcard, setModalCard] = useState(false)
   const UpdateModal = NewUpdateAddCard.isUpdateIlies
