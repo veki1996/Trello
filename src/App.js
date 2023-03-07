@@ -21,14 +21,22 @@ function App() {
   const openModal = (openClose) => {
     setModalCard(openClose)
   }
+  const closeModals=()=>{
+    setModal(false)
+    NewUpdateAddCard.onLogout()
+  }
+  const closeCartForCart=()=>{
+    setModalCard(false)
+  }
+ 
   return (
     <CartProvider>
         <HorizontalMenu/>
       <button onClick={AddNewColumn}>Add Column</button>
       <div className="app">
-        {modalcard && <CartForCard showCard={openModal} />}
-        {modal && <Cart updateClose={updateClose} />}
-        {UpdateModal && <UpdateCard />}
+        {modalcard && <CartForCard showCard={openModal} closeMenu={closeCartForCart} />}
+        {modal && <Cart updateClose={updateClose}  closeMenu={closeModals} />}
+        {UpdateModal && <UpdateCard  />}
         <Card openCard={openModal} OpenModal={AddNewColumn} />
       </div>
     </CartProvider>

@@ -1,12 +1,25 @@
-.CreateCardBtn{
+.CreateCardBtn {
     border: none;
     background-color: rgb(10, 250, 10);
 }
-.inputs{
-    width: 200px;
+
+.inputs {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
 }
-.inputs input{
-    width: 200px;
+
+.inputs input {
     height: 20px;
-    
+    border: none;
+    text-align: center;
+}
+.inputs input:focus{
+    outline: none;
+}
+.inputs input button{
+    max-width: 100px;
 }

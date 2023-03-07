@@ -30,11 +30,11 @@ const CartForCard = (props) => {
         setTitle(e.target.value)
     }
     return (
-        <Modal >
+        <Modal closeMenu={props.closeMenu}>
             <form className={Classes.CardForCard}>
-                <label>Name</label>
+                <label>Name:</label>
                 <input onChange={nameOnchangeHandler} placeholder="Add Name Of Card" type="text" />
-                <label>Description</label>
+                <label>Description:</label>
                 <input onChange={titleOnChangeHandler}placeholder="Type Description" type="text" />
                 <button onClick={AddNameAndTitle}>+Add Card</button>
             </form>

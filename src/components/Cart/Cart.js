@@ -32,7 +32,7 @@ const Cart = (props) => {
 
 
     return (
-        <Modal>
+        <Modal closeMenu={props.closeMenu}>
             <form className={Clasess.inputs}>
                 <input value={todo} onChange={handlerTodoChange} placeholder="Type Name oF The Column" type="text" />
                 {!MTF? <button className={Clasess.CreateCardBtn} onClick={AddedToCard}>Create Card </button> : <UpdateBtn updateClose={props.updateClose} updatedTodo={todo} />}

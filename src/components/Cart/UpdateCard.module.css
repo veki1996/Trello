@@ -1,0 +1,12 @@
+.Form{
+    display: flex;
+    flex-direction: column;
+}
+.Form button{
+    border: none;
+    background-color: rgb(10, 250, 10);
+    margin-top: 10px;
+}
+.Form input:focus{
+    outline: none;
+}

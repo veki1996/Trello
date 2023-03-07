@@ -3,6 +3,7 @@ import CartCtxTF from "../Store/auth-context";
 import { useContext, useState, useEffect } from "react";
 import { update, ref } from "firebase/database";
 import { db } from "../../Hooks/firebase";
+import Clasess from './UpdateCard.module.css'
 const UpdateCard = (props) => {
     const [nameV, setNameV] = useState('')
     const [titleV, setTitleV] = useState('')
@@ -32,12 +33,14 @@ const UpdateCard = (props) => {
         Ctx.onCloseIlises()
     }
     return (
-        <Modal >
-            <label>Update Name</label>
+        <Modal>
+            <form className={Clasess.Form}>
+            <label>Update Name:</label>
             <input onChange={nameOnchangeHandler} value={nameV} type="text" />
-            <label>Description</label>
+            <label>Description:</label>
             <input onChange={titleOnChangeHandler} value={titleV} type="text" />
-            <button onClick={AddNameAndTitle}>+ Update Card</button>
+            <button onClick={AddNameAndTitle}>+ Update Card :</button>
+            </form>
         </Modal>
     );
 };

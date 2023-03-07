@@ -1,14 +1,21 @@
-.CardForCard{
+.CardForCard {
     display: flex;
     flex-direction: column;
 }
-.CardForCard button{
+
+.CardForCard button {
     border: none;
     background-color: rgb(10, 250, 10);
-    width: 100px;
     margin-top: 10px;
 }
-.CardForCard input{
-    width: 90%;
-    height: 40px;
+
+.CardForCard input {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+
+.CardForCard input:focus {
+    outline: none;
 }
