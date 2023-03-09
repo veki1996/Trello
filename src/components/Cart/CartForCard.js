@@ -5,6 +5,7 @@ import { set, ref, } from 'firebase/database'
 import { db } from "../../Hooks/firebase"
 import { uid } from "uid"
 import Classes from './CartForCart.module.css'
+import AddFilesToCard from "./AddFilesToCard"
 const CartForCard = (props) => {
     const [name, setName] = useState("")
     const [title, setTitle] = useState('')
@@ -17,13 +18,13 @@ const CartForCard = (props) => {
         e.preventDefault()
         const newuuid = uid()
         set(ref(db, `${uuid}/Names/${newuuid}`), {
-            
-                title: title,
-                name: name,
-                uuid: newuuid
-            
+
+            title: title,
+            name: name,
+            uuid: newuuid
+
         })
-      
+
         props.showCard(false)
     }
     const titleOnChangeHandler = (e) => {
@@ -35,7 +36,8 @@ const CartForCard = (props) => {
                 <label>Name:</label>
                 <input onChange={nameOnchangeHandler} placeholder="Add Name Of Card" type="text" />
                 <label>Description:</label>
-                <input onChange={titleOnChangeHandler}placeholder="Type Description" type="text" />
+                <input onChange={titleOnChangeHandler} placeholder="Type Description" type="text" />
+                <AddFilesToCard/>
                 <button onClick={AddNameAndTitle}>+Add Card</button>
             </form>
         </Modal>

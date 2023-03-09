@@ -19,7 +19,7 @@ const UpdateCard = (props) => {
     const nameOnchangeHandler = (e) => {
         setNameV(e.target.value)
     }
-    const titleOnChangeHandler = (e) => {
+    const titleOnChangeHandler = (e) => { 
         setTitleV(e.target.value)
     }
     const CUuid = Ctx.UpdateValue.ColumnId
@@ -32,8 +32,11 @@ const UpdateCard = (props) => {
         })  
         Ctx.onCloseIlises()
     }
+    const closeMenu=()=>{
+      Ctx.onCloseIlises()
+    }
     return (
-        <Modal>
+        <Modal closeMenu={closeMenu}>
             <form className={Clasess.Form}>
             <label>Update Name:</label>
             <input onChange={nameOnchangeHandler} value={nameV} type="text" />
