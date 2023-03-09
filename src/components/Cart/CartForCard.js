@@ -3,12 +3,13 @@ import { useState, useContext } from "react"
 import CartContext from "../Store/cart-context"
 import { set, ref, } from 'firebase/database'
 import { db } from "../../Hooks/firebase"
-import { uid } from "uid"
 import Classes from './CartForCart.module.css'
 import AddFilesToCard from "./AddFilesToCard"
 const CartForCard = (props) => {
     const [name, setName] = useState("")
     const [title, setTitle] = useState('')
+    const[newuuid,setNewuuid]= useState('')
+    const[uploaded, setUploaded]=useState(false)
     const CardCtx = useContext(CartContext)
     const uuid = CardCtx.updateUuuid
     const nameOnchangeHandler = (e) => {
@@ -16,7 +17,7 @@ const CartForCard = (props) => {
     }
     const AddNameAndTitle = (e) => {
         e.preventDefault()
-        const newuuid = uid()
+       
         set(ref(db, `${uuid}/Names/${newuuid}`), {
 
             title: title,
@@ -30,6 +31,7 @@ const CartForCard = (props) => {
     const titleOnChangeHandler = (e) => {
         setTitle(e.target.value)
     }
+   console.log(uuid)
     return (
         <Modal closeMenu={props.closeMenu}>
             <form className={Classes.CardForCard}>
@@ -37,8 +39,8 @@ const CartForCard = (props) => {
                 <input onChange={nameOnchangeHandler} placeholder="Add Name Of Card" type="text" />
                 <label>Description:</label>
                 <input onChange={titleOnChangeHandler} placeholder="Type Description" type="text" />
-                <AddFilesToCard/>
-                <button onClick={AddNameAndTitle}>+Add Card</button>
+                <AddFilesToCard sendUid={(uids=>{setNewuuid(uids.uid);setUploaded(uids.imageUploaded)})} />
+                <button onClick={AddNameAndTitle} disabled={!uploaded}>+Add Card</button>
             </form>
         </Modal>
     );
