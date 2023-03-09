@@ -3,6 +3,7 @@ import { db } from '../Hooks/firebase'
 import { set, ref, onValue } from 'firebase/database'
 import { useState, useEffect } from 'react'
 import CardPage from './CardPage'
+
 const Card = (props) => {
     const [todos, setTodos] = useState([])
     useEffect(() => {
