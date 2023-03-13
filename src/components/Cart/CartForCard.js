@@ -19,7 +19,6 @@ const CartForCard = (props) => {
         e.preventDefault()
        
         set(ref(db, `${uuid}/Names/${newuuid}`), {
-
             title: title,
             name: name,
             uuid: newuuid
@@ -31,7 +30,7 @@ const CartForCard = (props) => {
     const titleOnChangeHandler = (e) => {
         setTitle(e.target.value)
     }
-   console.log(uuid)
+
     return (
         <Modal closeMenu={props.closeMenu}>
             <form className={Classes.CardForCard}>
@@ -40,7 +39,7 @@ const CartForCard = (props) => {
                 <label>Description:</label>
                 <input onChange={titleOnChangeHandler} placeholder="Type Description" type="text" />
                 <AddFilesToCard sendUid={(uids=>{setNewuuid(uids.uid);setUploaded(uids.imageUploaded)})} />
-                <button onClick={AddNameAndTitle} disabled={!uploaded}>+Add Card</button>
+                <button onClick={AddNameAndTitle} >+Add Card</button>
             </form>
         </Modal>
     );
