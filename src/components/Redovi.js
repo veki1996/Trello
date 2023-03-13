@@ -5,6 +5,8 @@ import Edit from './Imeges/edit.png'
 import RemoveBtn from './removeBtnForRedovi'
 import { storage } from '../Hooks/firebase'
 import { getDownloadURL, listAll, ref } from 'firebase/storage'
+import ImagesCard from './ImagesCard'
+import { uid } from 'uid'
 const Redovi = (props) => {
     const [imagesUrl, setImagesUrl] = useState([])
     const imageListRef = ref(storage, `images/${props.uuid}`)
@@ -31,13 +33,12 @@ const Redovi = (props) => {
     return (
 
         <div className={Clasess.lines}>
-            <h3 className={Clasess.ha3} >{props.lines}</h3>
-            {imagesUrl.map((url) => {
-                return <img  key={props.uuid}  src={url} alt="IliesImg"  className={Clasess.images}/>
+              {imagesUrl.map((url) => {
+                return <ImagesCard key={props.uuid} kejs={props.uuid} src={url}/>
             })}
+            <h3 className={Clasess.ha3} >{props.lines}</h3>
             <div className={Clasess.btns}>
                 <>
-
                     <RemoveBtn columnUUid={props.columnUUid} uuid={props.uuid} />
                 </>
                 <>
