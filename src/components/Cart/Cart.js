@@ -1,4 +1,4 @@
-import UpdateBtn from "../../Hooks/UpdateBtn";
+import UpdateBtn from "../ButtonsAndInputs/UpdateBtn";
 import Modal from "../Modal/Modals"
 import { useState, useContext, useEffect } from "react"
 import CartContext from "../Store/cart-context"
