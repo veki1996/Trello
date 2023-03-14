@@ -5,12 +5,13 @@ import { set, ref, } from 'firebase/database'
 import { db } from "../../Hooks/firebase"
 import Classes from './CartForCart.module.css'
 import AddFilesToCard from "./AddFilesToCard"
+import { uid } from "uid"
 const CartForCard = (props) => {
     const [name, setName] = useState("")
     const [title, setTitle] = useState('')
-    const[newuuid,setNewuuid]= useState('')
     const[uploaded, setUploaded]=useState(false)
     const CardCtx = useContext(CartContext)
+    const uids= uid()
     const uuid = CardCtx.updateUuuid
     const nameOnchangeHandler = (e) => {
         setName(e.target.value)
@@ -18,10 +19,10 @@ const CartForCard = (props) => {
     const AddNameAndTitle = (e) => {
         e.preventDefault()
        
-        set(ref(db, `${uuid}/Names/${newuuid}`), {
+        set(ref(db, `${uuid}/Names/${uids}`), {
             title: title,
             name: name,
-            uuid: newuuid
+            uuid: uids
 
         })
 
@@ -38,7 +39,7 @@ const CartForCard = (props) => {
                 <input onChange={nameOnchangeHandler} placeholder="Add Name Of Card" type="text" />
                 <label>Description:</label>
                 <input onChange={titleOnChangeHandler} placeholder="Type Description" type="text" />
-                <AddFilesToCard sendUid={(uids=>{setNewuuid(uids.uid);setUploaded(uids.imageUploaded)})} />
+                <AddFilesToCard uids={uids} />
                 <button onClick={AddNameAndTitle} >+Add Card</button>
             </form>
         </Modal>
