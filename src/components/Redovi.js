@@ -2,7 +2,7 @@ import Clasess from './Redovi.module.css'
 import CartCtxTF from './Store/auth-context'
 import { useContext, useEffect, useState } from 'react'
 import Edit from './Imeges/edit.png'
-import RemoveBtn from './removeBtnForRedovi'
+import RemoveBtn from './ButtonsAndInputs/removeBtnForRedovi'
 import { storage } from '../Hooks/firebase'
 import { getDownloadURL, listAll, ref } from 'firebase/storage'
 import ImagesCard from './ImagesCard'
@@ -39,7 +39,7 @@ const Redovi = (props) => {
             <h3 className={Clasess.ha3} >{props.lines}</h3>
             <div className={Clasess.btns}>
                 <>
-                    <RemoveBtn columnUUid={props.columnUUid} uuid={props.uuid} />
+                    <RemoveBtn  columnUUid={props.columnUUid} uuid={props.uuid} />
                 </>
                 <>
                     <img alt='EditIMG' src={Edit} />
