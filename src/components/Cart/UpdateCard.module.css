@@ -1,12 +1,46 @@
 .Form{
     display: flex;
     flex-direction: column;
+    
 }
-.Form button{
+
+.name{
+    display: flex;
+    align-items: center;
+}
+.name input{
     border: none;
-    background-color: rgb(10, 250, 10);
-    margin-top: 10px;
+    background-color: rgb(226, 225, 195);
+    text-transform: capitalize;
 }
-.Form input:focus{
-    outline: none;
+.name input:focus{
+    background-color: white;
+}
+.name img{
+    width: 24px;
+    height: 24px;
+}
+.Description{
+    display: flex;
+    align-items: center;
+   
+}
+.Description img{
+    width: 24px;
+    padding-right: 10px;
+    height: 24px;
+}
+.Description p{
+    padding-right: 10px;
+}
+.TextEditor{
+    background-color: white;
+    border: 1px solid blue;
+}
+.EditDescription{
+    background-color: rgb(221, 219, 172);
+    border: none;
+}
+.EditDescription:hover{
+    background-color: rgb(228, 225, 157);
 }
