@@ -5,11 +5,16 @@ const CartCtxTF = React.createContext({
     isUpdateIlies: false,
     isSearch: false,
     SearchingValues: '',
+    RegisterUuid :'',
+    pageLogin:false,
     onLogout: () => { },
     onLogin: () => { },
     ValidateUpdate: () => { },
     onCloseIlises: () => { },
     SearchingValue: () => { },
+    RegisterUid:()=>{},
+    loggedForPage:()=>{},
+    loggedOutPage:()=>{},
 })
 export const AutchContextProvuider = (props) => {
     const [ValueOfSearch, setValueofSearch] = useState("")
@@ -17,6 +22,11 @@ export const AutchContextProvuider = (props) => {
     const [isLoggedIn, setIsloogedIn] = useState(false)
     const [update, setUpdate] = useState({})
     const [ilies, setIlies] = useState(false)
+    const [RegisterValue, setRegisterValue]= useState('')
+    const [loginPage, setLoginPage]= useState(false)
+    const RegisterHandler= (value)=>{
+        setRegisterValue(value)
+    }
     const logoutHandler = () => {
         setIsloogedIn(false)
     }
@@ -34,6 +44,12 @@ export const AutchContextProvuider = (props) => {
         setIsSearching(true)
         setValueofSearch(value)
     }
+    const onLoginPageHandler=()=>{
+        setLoginPage(true)
+    }
+    const onLogoutPageHandler=()=>{
+        setLoginPage(false)
+    }
     return <CartCtxTF.Provider
         value={{
             isLoggedIn: isLoggedIn,
@@ -42,10 +58,16 @@ export const AutchContextProvuider = (props) => {
             ValidateUpdate: OnvalidateHandler,
             onCloseIlises: closeIlisesHandler,
             SearchingValue: onSearchinghandler,
+            RegisterUid:RegisterHandler,
+            loggedForPage:onLoginPageHandler,
+            loggedOutPage:onLogoutPageHandler,
             UpdateValue: update,
             isUpdateIlies: ilies,
             isSearch: isSearching,
-            SearchingValues: ValueOfSearch
+            RegisterUuid:RegisterValue,
+            SearchingValues: ValueOfSearch,
+            pageLogin:loginPage,
+
         }}>{props.children}</CartCtxTF.Provider>
 }
 export default CartCtxTF
