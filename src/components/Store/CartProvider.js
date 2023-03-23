@@ -1,24 +1,12 @@
 import CartContext from "./cart-context";
 import { useReducer } from "react";
-import { db } from "../../Hooks/firebase";
-import { set, ref } from 'firebase/database'
-import { uid } from "uid";
+
 const defaultState = {
     items: '',
     isValid: false,
     updateUuuid: '',
 }
 const cartReducer = (state, action) => {
-    if (action.type === "ADD") {
-
-        const todo = action.item.item
-        const uuid = uid()
-        set(ref(db, `/${uuid}`), {
-            todo,
-            uuid,
-           
-        })
-    }
     if (action.type === "VALUE") {
         const newItems = action.value.value
         const Updateuid = action.value.uuid
