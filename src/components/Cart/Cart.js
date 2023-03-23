@@ -4,7 +4,9 @@ import { useState, useContext, useEffect } from "react"
 import CartContext from "../Store/cart-context"
 import CartCtxTF from "../Store/auth-context";
 import Clasess from './Cart.module.css'
-
+import { set, ref } from "firebase/database";
+import { db } from "../../Hooks/firebase";
+import { uid } from "uid";
 const Cart = (props) => {
     const UpdateModal = useContext(CartCtxTF)
     const CartCtx = useContext(CartContext);
@@ -15,17 +17,19 @@ const Cart = (props) => {
             setTodo(CartCtx.items);
         }
     }, [CartCtx.isValid]);
-    
+
     const handlerTodoChange = e => {
         setTodo(e.target.value);
-
     };
-
     const AddedToCard = e => {
         e.preventDefault();
-        CartCtx.addItem({
-            item: todo,
-        });
+        const UserUid = UpdateModal.RegisterUuid
+        const uuid = uid()
+        set(ref(db, `/${UserUid}/${uuid}`), {
+            todo,
+            uuid,
+
+        })
         setTodo("");
         props.updateClose(false)
     };
@@ -35,7 +39,7 @@ const Cart = (props) => {
         <Modal closeMenu={props.closeMenu}>
             <form className={Clasess.inputs}>
                 <input value={todo} onChange={handlerTodoChange} placeholder="Type Name oF The Column" type="text" />
-                {!MTF? <button className={Clasess.CreateCardBtn} onClick={AddedToCard}>Create Card </button> : <UpdateBtn updateClose={props.updateClose} updatedTodo={todo} />}
+                {!MTF ? <button className={Clasess.CreateCardBtn} onClick={AddedToCard}>Create Card </button> : <UpdateBtn updateClose={props.updateClose} updatedTodo={todo} />}
             </form>
         </Modal>
     );
