@@ -20,8 +20,13 @@ const SaveCancelUpdate = (props) => {
         })
         props.onCloseText(false)
     }
-    const CancelChanges=()=>{
+    const CancelChanges = () => {
         props.onCloseText(false)
+        update(ref(db, `/${CUuid}/Names/${uuid}`), {
+            name: nameV,
+            title: title,
+            uuid
+        })
     }
     return (
         <div className={Clases.Btns}>
