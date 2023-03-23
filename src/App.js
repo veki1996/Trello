@@ -24,7 +24,6 @@ function App() {
   if (isLoading) {
     return <div>Loading...</div>;
   }
-
   return (
     <CartProvider>
       <div className="app">
