@@ -1,0 +1,11 @@
+.Details{
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(221, 219, 172);
+    max-width:fit-content;
+    padding: 2px 2px;
+}
+.Details:hover{
+    background-color: rgb(228, 225, 157);
+    
+}
