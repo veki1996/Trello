@@ -16,7 +16,7 @@ const Card = (props) => {
             setTodos([])
             const data = snapshot.val()
             if (data !== null) {
-                    Object.values(data[UserID]).map((todo) => {
+                    Object.values(data && data[UserID]).map((todo) => {
                         setTodos((oldArray) => [...oldArray, todo])
                     })
                 
