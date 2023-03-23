@@ -28,7 +28,7 @@ const Cart = (props) => {
         set(ref(db, `/${UserUid}/${uuid}`), {
             todo,
             uuid,
-
+            
         })
         setTodo("");
         props.updateClose(false)

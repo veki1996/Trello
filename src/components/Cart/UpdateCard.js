@@ -81,7 +81,7 @@ const UpdateCard = (props) => {
                     }} />}
                 <div className={Clasess.Activity}>
                     <div>
-                        <img src={Comment}/>
+                        <img src={Comment} />
                         <p>Activity</p>
                     </div>
                     <ShowDetails ShowDetails={(val) => { setDetails(val) }} />
