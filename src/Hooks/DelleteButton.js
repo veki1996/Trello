@@ -1,20 +1,24 @@
 import { remove } from "firebase/database"
 import { db } from "./firebase"
-import {ref} from 'firebase/database'
+import { ref } from 'firebase/database'
 import Calsess from './Dellete.module.css'
 import dellete from '../components/Imeges/delete.png'
-const DelleteBtn =(props)=>{
- 
-    const handlerDelete =()=>{
+import CartCtxTF from "../components/Store/auth-context"
+import { useContext } from "react"
+
+const DelleteBtn = (props) => {
+    const Ctx = useContext(CartCtxTF)
+    const UserID = Ctx.RegisterUuid
+    const handlerDelete = () => {
         const todo = props.todo
-        remove(ref(db, `/${todo.uuid}`))
+        remove(ref(db, `/${UserID}/${todo.uuid}`))
     }
-    return(
+    return (
         <div className={Calsess.MainBtn}>
-        <img src={dellete}/>
-        <button  onClick={()=>handlerDelete(props.todo)}>Dellete Column</button>
+            <img src={dellete} />
+            <button onClick={() => handlerDelete(props.todo)}>Dellete Column</button>
         </div>
-        
+
     )
 }
 export default DelleteBtn
