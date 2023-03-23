@@ -44,3 +44,15 @@
 .EditDescription:hover{
     background-color: rgb(228, 225, 157);
 }
+.Activity{
+    display: flex;
+    justify-content: space-between;
+}
+.Activity div{
+    display: flex;
+   align-items: center;
+}
+.Activity img {
+    width: 24px;
+    height: 24px;
+}
