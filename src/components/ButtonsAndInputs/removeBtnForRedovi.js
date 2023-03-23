@@ -2,11 +2,14 @@ import { ref, remove } from "firebase/database"
 import { db } from "../../Hooks/firebase"
 import Del from '../Imeges/delete.png'
 import { ref as storageRef, getStorage, listAll, deleteObject } from "firebase/storage"
+import { useContext } from "react"
+import CartCtxTF from "../Store/auth-context"
 const RemoveBtn = (props) => {
+    const Ctc = useContext(CartCtxTF)
+    const userID = Ctc.RegisterUuid
     const RemoveCard = () => {
-        remove(ref(db, `/${props.columnUUid}/Names/${props.uuid}`))
-
-        const storage = getStorage()
+        remove(ref(db, `/${userID}/${props.columnUUid}/Names/${props.uuid}`))
+        /*const storage = getStorage()
         const folderRef = storageRef(storage, `images/${props.uuid}`);
         listAll(folderRef)
             .then((res) => {
@@ -20,6 +23,7 @@ const RemoveBtn = (props) => {
             .catch((error) => {
                 console.log("Error deleting folder: ", error);
             });
+            */
     }
     return (
         <>
