@@ -7,13 +7,13 @@ const SaveCancelUpdate = (props) => {
     const titleV = props.TItleDes.titleV
     const nameV = props.TItleDes.nameV
     const Ctx = useContext(CartCtxTF)
-    const name = Ctx.UpdateValue.value
     const title = Ctx.UpdateValue.title
     const CUuid = Ctx.UpdateValue.ColumnId
     const uuid = Ctx.UpdateValue.uuid
+    const UserID = Ctx.RegisterUuid
     const SaveChange = (e) => {
         e.preventDefault()
-        update(ref(db, `/${CUuid}/Names/${uuid}`), {
+        update(ref(db, `/${UserID}/${CUuid}/Names/${uuid}`), {
             name: nameV,
             title: titleV,
             uuid

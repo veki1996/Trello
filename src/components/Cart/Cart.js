@@ -28,7 +28,7 @@ const Cart = (props) => {
         set(ref(db, `/${UserUid}/${uuid}`), {
             todo,
             uuid,
-            
+
         })
         setTodo("");
         props.updateClose(false)
@@ -39,7 +39,7 @@ const Cart = (props) => {
         <Modal closeMenu={props.closeMenu}>
             <form className={Clasess.inputs}>
                 <input value={todo} onChange={handlerTodoChange} placeholder="Type Name oF The Column" type="text" />
-                {!MTF ? <button className={Clasess.CreateCardBtn} onClick={AddedToCard}>Create Card </button> : <UpdateBtn updateClose={props.updateClose} updatedTodo={todo} />}
+                {!MTF ? <button className={Clasess.CreateCardBtn} onClick={AddedToCard}>Create Column </button> : <UpdateBtn updateClose={props.updateClose} updatedTodo={todo} />}
             </form>
         </Modal>
     );

@@ -1,20 +1,37 @@
 import React from "react";
 import "./HorizontalMenu.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import CartCtxTF from "../Store/auth-context";
 import LogoutPage from "../ButtonsAndInputs/LogoutPage";
+import { auth } from "../../Hooks/firebase";
 const HorizontalMenu = (props) => {
     const ctx = useContext(CartCtxTF)
     const [input, setInput] = useState(true)
+    const [displayName, setDisplayName] = useState(null);
     const ShowBiggerInput = () => {
         setInput(false)
     }
-    const onBlurInput = () => {
-        setInput(true)
-    }
-    const InputValue = (e)=>{
-        ctx.SearchingValue(e.target.value)
-    }
+    /*  const onBlurInput = () => {
+          setInput(true)
+      }
+      const InputValue = (e) => {
+          ctx.SearchingValue(e.target.value)
+      }
+  */
+
+
+    useEffect(() => {
+        const authUnsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                setDisplayName(user.displayName);
+            } else {
+                setDisplayName(null);
+            }
+        });
+        return () => {
+            authUnsubscribe();
+        };
+    }, []);
     return (
         <div className="menu">
             <div className="ItemsWotkspace">
@@ -23,11 +40,12 @@ const HorizontalMenu = (props) => {
                 <div className="menu-item">Starrted</div>
                 <div className="menu-item">Templates</div>
                 <div className="menu-item">Create</div>
-                <button onClick={()=>{props.sendModal(true)}}>Add Column</button>
+                <button onClick={() => { props.sendModal(true) }}>Add Column</button>
             </div>
-            <div>
-                {input ? <input onClick={ShowBiggerInput} placeholder="Search" /> : <input placeholder="Search" onChange={InputValue} className="ExpendInput" onBlur={onBlurInput} />}
-                <LogoutPage/>
+            <div className="User">
+                {<p>Welcome: <b>{displayName}</b></p>}
+                {/* commeent search // input ? <input onClick={ShowBiggerInput} placeholder="Search" /> : <input placeholder="Search" onChange={InputValue} className="ExpendInput" onBlur={onBlurInput} />*/}
+                <LogoutPage />
             </div>
         </div>
     );

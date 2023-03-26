@@ -1,3 +1,10 @@
+.MainDiv{
+    display: flex;
+    justify-content: flex-start;
+}
+.FirstC{
+    width: 80%;
+}
 .Form{
     display: flex;
     flex-direction: column;

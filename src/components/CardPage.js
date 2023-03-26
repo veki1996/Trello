@@ -1,4 +1,4 @@
-import DelleteBtn from "../Hooks/DelleteButton"
+import DelleteBtn from "./ButtonsAndInputs/DelleteButton"
 import { useContext, useEffect, useState } from "react"
 import CartContext from "./Store/cart-context"
 import CartCtxTF from "./Store/auth-context"

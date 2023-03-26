@@ -15,6 +15,7 @@ import ShowDetails from "../ButtonsAndInputs/ShowDetails";
 import TimeAndDate from "./TimeAndDate";
 import { uid } from "uid";
 import UpdateDateAndTime from "./UpdateDateAndTime";
+import AddToCard from "./AddToCard";
 const UpdateCard = (props) => {
     const [nameV, setNameV] = useState('')
     const [details, setDetails] = useState(false)
@@ -58,38 +59,44 @@ const UpdateCard = (props) => {
         e.preventDefault()
         setOpenDes(true)
     }
-
     return (
-        <Modal closeMenu={() => { Ctx.onCloseIlises() }}>
-            <form className={Clasess.Form}>
-                <div className={Clasess.name}>
-                    <img src={CardName} />
-                    <input onChange={(e) => { setNameV(e.target.value) }} value={nameV} type="text" />
+        <Modal  closeMenu={() => { Ctx.onCloseIlises() }}>
+            <div className={Clasess.MainDiv}>
+                <div className={Clasess.FirstC}>
+                    <form className={Clasess.Form}>
+                        <div className={Clasess.name}>
+                            <img src={CardName} />
+                            <input onChange={(e) => { setNameV(e.target.value) }} value={nameV} type="text" />
+                        </div>
+                        <p>In list <b>Card</b></p>
+                        <div className={Clasess.Description}>
+                            <img src={Description} />
+                            <p>Description</p>
+                            <button className={Clasess.EditDescription} onClick={OpenDescription}> Edit</button>
+                        </div>
+                        {!openDes && <ValueDescription OpenDes={() => { setOpenDes(true) }} ValueDes={titleV} />}
+                        {openDes && <ReactQuill className={Clasess.TextEditor} value={titleV} onChange={(value) => { setTitleV(value) }} />}
+                        {openDes && <SaveCancelUpdate onCloseText={(close) => { setOpenDes(close) }}
+                            TItleDes={{
+                                titleV,
+                                nameV
+                            }} />}
+                        <div className={Clasess.Activity}>
+                            <div>
+                                <img src={Comment} />
+                                <p>Activity</p>
+                            </div>
+                            <ShowDetails ShowDetails={(val) => { setDetails(val) }} />
+                        </div>
+                        <button onClick={AddNameAndTitle}>+ Update Card </button>
+                        {details && <TimeAndDate />}
+                        {details && <UpdateDateAndTime />}
+                    </form>
                 </div>
-                <p>In list <b>Card</b></p>
-                <div className={Clasess.Description}>
-                    <img src={Description} />
-                    <p>Description</p>
-                    <button className={Clasess.EditDescription} onClick={OpenDescription}> Edit</button>
+                <div>
+                    <AddToCard />
                 </div>
-                {!openDes && <ValueDescription OpenDes={() => { setOpenDes(true) }} ValueDes={titleV} />}
-                {openDes && <ReactQuill className={Clasess.TextEditor} value={titleV} onChange={(value) => { setTitleV(value) }} />}
-                {openDes && <SaveCancelUpdate onCloseText={(close) => { setOpenDes(close) }}
-                    TItleDes={{
-                        titleV,
-                        nameV
-                    }} />}
-                <div className={Clasess.Activity}>
-                    <div>
-                        <img src={Comment} />
-                        <p>Activity</p>
-                    </div>
-                    <ShowDetails ShowDetails={(val) => { setDetails(val) }} />
-                </div>
-                <button onClick={AddNameAndTitle}>+ Update Card </button>
-                {details && <TimeAndDate />}
-                {details && <UpdateDateAndTime />}
-            </form>
+            </div>
         </Modal>
     );
 };
