@@ -20,7 +20,6 @@ function App() {
     });
     return unsubscribe;
   }, []);
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
