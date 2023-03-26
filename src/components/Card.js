@@ -29,7 +29,7 @@ const Card = (props) => {
         openCard={props.openCard}
         OpenModal={props.OpenModal}
         todo={todo}
-        key={todo.todo}
+        key={todo.uuid}
         name={todo.Names}
         column={todo.todo}
     />)

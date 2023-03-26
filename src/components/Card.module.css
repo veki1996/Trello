@@ -1,7 +1,6 @@
 .Column {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    
+    overflow-x: auto;
 }
 
