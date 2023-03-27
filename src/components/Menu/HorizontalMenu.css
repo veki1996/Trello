@@ -19,7 +19,18 @@
     width: 100%;
     cursor: pointer;
   }
-  
+  .ItemsWotkspace button{
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #333;
+    border: none;
+  }
+  .ItemsWotkspace button:hover{
+    background-color: #555;
+  }
   .menu-item:hover {
     background-color: #555;
   }
@@ -35,3 +46,11 @@
     color: white;
   }
  
+  @media (min-width:350px) and (max-width:700px){
+    .menu{
+      font-size: small;
+    }
+    .menu-item{
+      padding: 10px;
+    }
+  }

@@ -1,0 +1,8 @@
+.Logout{
+    background-color: #333;
+    border: none;
+    color: white;
+}
+.Logout:hover{
+    background-color: #555;
+}

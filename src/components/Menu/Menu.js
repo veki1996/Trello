@@ -35,11 +35,11 @@ const HorizontalMenu = (props) => {
     return (
         <div className="menu">
             <div className="ItemsWotkspace">
-                <div className="menu-item">Workspace  </div>
+                { /*<div className="menu-item">Workspace  </div>
                 <div className="menu-item">Recent </div>
                 <div className="menu-item">Starrted</div>
                 <div className="menu-item">Templates</div>
-                <div className="menu-item">Create</div>
+                 <div className="menu-item">Create</div>*/}
                 <button onClick={() => { props.sendModal(true) }}>Add Column</button>
             </div>
             <div className="User">

@@ -2,6 +2,7 @@ import { auth } from "../../Hooks/firebase"
 import { signOut } from "firebase/auth"
 import CartCtxTF from "../Store/auth-context"
 import React, { useContext } from "react"
+import Classes from './LogoutPage.module.css'
 const LogoutPage = ()=>{
     const Ctx = useContext(CartCtxTF)
     const login = async () => {
@@ -9,7 +10,7 @@ const LogoutPage = ()=>{
         Ctx.loggedOutPage()
     }
     return(
-        <button onClick={login}>Logout</button>
+        <button className={Classes.Logout} onClick={login}>Logout</button>
     )
 }
 export default LogoutPage
