@@ -1,7 +1,7 @@
 import { ref, remove } from "firebase/database"
 import { db } from "../../Hooks/firebase"
-import Del from '../Imeges/delete.png'
-import { ref as storageRef, getStorage, listAll, deleteObject } from "firebase/storage"
+import Del from '../Images/delete.png'
+//import { ref as storageRef, agetStorage, listAll, deleteObject } from "firebase/storage"
 import { useContext } from "react"
 import CartCtxTF from "../Store/auth-context"
 const RemoveBtn = (props) => {

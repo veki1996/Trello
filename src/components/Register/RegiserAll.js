@@ -5,7 +5,7 @@ const RegisterAll = (props) => {
     const [Logged, setLogged] = useState(false)
     return (
         <>
-            {!Logged && <Register LoggedIn={props.LoggedIn} LoginBtn={(val) => { setLogged(val) }} />}
+            {!Logged && <Register   LoginBtn={(val) => { setLogged(val) }} />}
             {Logged && <Login LoggedIn={props.LoggedIn}/>}
         </>
     )

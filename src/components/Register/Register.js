@@ -19,7 +19,7 @@ function Register(props) {
         if (user?.email?.length > 2) {
             Ctx.loggedForPage()
         }
-    }, [user])
+    }, [Ctx, user?.email?.length])
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -49,7 +49,10 @@ function Register(props) {
         await signOut(auth)
         props.LoginBtn(true)
     }
-    Ctx.RegisterUid(user?.uid)
+    useEffect(() => {
+        Ctx.RegisterUid(user?.uid)
+    }, [Ctx,user?.uid])
+    
     return (
         <Modal>
             <form className="form-container" onSubmit={handleSubmit}>

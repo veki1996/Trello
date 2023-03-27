@@ -1,4 +1,4 @@
-import Cover from '../Imeges/cover.png'
+import Cover from '../Images/cover.png'
 import Classes from './CoverImage.module.css'
 import { storage } from '../../Hooks/firebase'
 import { useContext, useState } from 'react';

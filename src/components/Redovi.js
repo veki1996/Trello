@@ -1,7 +1,7 @@
 import Clasess from './Redovi.module.css'
 import CartCtxTF from './Store/auth-context'
 import { useContext, useEffect, useState } from 'react'
-import Edit from './Imeges/edit.png'
+import Edit from './Images/edit.png'
 import RemoveBtn from './ButtonsAndInputs/removeBtnForRedovi'
 import { storage } from '../Hooks/firebase'
 import { getDownloadURL, listAll, ref } from 'firebase/storage'

@@ -26,7 +26,7 @@ function App() {
   return (
     <CartProvider>
       <div className="app">
-        {login && user ? <RegisterAndPage /> : <RegisterAll />}
+        {login && user ? <RegisterAndPage /> : <RegisterAll  />}
       </div>
     </CartProvider>
   );
