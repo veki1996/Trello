@@ -5,6 +5,7 @@
     border-radius: 10px;
     border-radius: 10px;
     width: 300px;
+    min-width: 300px
 }
 
 .MainCardPageSecond {

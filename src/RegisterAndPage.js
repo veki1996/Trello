@@ -1,5 +1,4 @@
 import Card from "./components/Card";
-import CartProvider from "./components/Store/CartProvider";
 import Cart from "./components/Cart/Cart";
 import { useState, useContext } from "react";
 import CartCtxTF from "./components/Store/auth-context";
@@ -23,12 +22,12 @@ const RegisterAndPage = () => {
     return (
         <>
             <HorizontalMenu sendModal={(modal) => { setModal(modal) }} />
-            <div>
+            <>
                 {modalcard && <CartForCard showCard={(openClose) => { setModalCard(openClose) }} closeMenu={() => { setModalCard(false) }} />}
                 {modal && <Cart updateClose={updateClose} closeMenu={closeModals} />}
                 {UpdateModal && <UpdateCard />}
                 <Card openCard={(openClose) => { setModalCard(openClose) }} OpenModal={() => { setModal(true) }} />
-            </div>
+            </>
         </>
     )
 }

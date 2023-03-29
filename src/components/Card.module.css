@@ -1,12 +1,13 @@
 .Column {
     display: flex;
     flex-direction: row;
-    overflow-x: auto;
     align-items: flex-start;
+    overflow-x: auto;
+    height: 93vh;
 }
-@media (min-width: 350px) and (max-width:700px) {
+@media (max-width: 900px)   {
     .Column{
-        flex-wrap: wrap;
+        overflow-x: scroll;
     }
   }
 

@@ -1,5 +1,5 @@
 import DelleteBtn from "./ButtonsAndInputs/DelleteButton"
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import CartContext from "./Store/cart-context"
 import CartCtxTF from "./Store/auth-context"
 import Clasess from './CardPage.module.css'
