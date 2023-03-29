@@ -16,6 +16,7 @@ import TimeAndDate from "./TimeAndDate";
 import { uid } from "uid";
 import UpdateDateAndTime from "./UpdateDateAndTime";
 import AddToCard from "./AddToCard";
+import ImageCover from "./ImageCover";
 const UpdateCard = (props) => {
     const [nameV, setNameV] = useState('')
     const [details, setDetails] = useState(false)
@@ -38,12 +39,13 @@ const UpdateCard = (props) => {
             setCurrentTime(new Date());
         }, 1000);
         return () => clearInterval(interval);
-    },[]);
+    }, []);
 
     const newDate = currentTime.toString()
     const CUuid = Ctx.UpdateValue.ColumnId
     const uuid = Ctx.UpdateValue.uuid
     const DateUid = uid()
+    
     const AddNameAndTitle = () => {
         update(ref(db, `/${UserUid}/${CUuid}/Names/${uuid}`), {
             name: nameV,
@@ -60,12 +62,13 @@ const UpdateCard = (props) => {
         setOpenDes(true)
     }
     return (
-        <Modal  closeMenu={() => { Ctx.onCloseIlises() }}>
+        <Modal closeMenu={() => { Ctx.onCloseIlises() }}>
+            <ImageCover ImageUUid={uuid} />
             <div className={Clasess.MainDiv}>
                 <div className={Clasess.FirstC}>
                     <form className={Clasess.Form}>
                         <div className={Clasess.name}>
-                            <img  alt='Name' src={CardName} />
+                            <img alt='Name' src={CardName} />
                             <input onChange={(e) => { setNameV(e.target.value) }} value={nameV} type="text" />
                         </div>
                         <p>In list <b>Card</b></p>
