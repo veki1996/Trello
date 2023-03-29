@@ -1,15 +1,11 @@
 import Clasess from './ImagesCard.module.css'
 const ImagesCard = (props) => {
     return (
-        <img
+        <img className={Clasess.ImgS}
             src={props.src}
             key={props.kejs}
-            style={{ width:'300px', 
-            height:'150px',
-            borderTopRightRadius:'10px', 
-            borderTopLeftRadius:'10px',
-            objectFit:'cover'
-            }} />
+            alt="Iimg"
+            />
     )
 }
 export default ImagesCard
