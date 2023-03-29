@@ -1,17 +1,17 @@
 import React from "react";
 import "./HorizontalMenu.css";
-import { useState, useContext, useEffect } from "react";
-import CartCtxTF from "../Store/auth-context";
+import { useState, /*useContext*/ useEffect } from "react";
+//import CartCtxTF from "../Store/auth-context";
 import LogoutPage from "../ButtonsAndInputs/LogoutPage";
 import { auth } from "../../Hooks/firebase";
 const HorizontalMenu = (props) => {
-    const ctx = useContext(CartCtxTF)
-    const [input, setInput] = useState(true)
+   /* const ctx = useContext(CartCtxTF)
+    const [input, setInput] = useState(true)2*/
     const [displayName, setDisplayName] = useState(null);
-    const ShowBiggerInput = () => {
+   /* const ShowBiggerInput = () => {
         setInput(false)
     }
-    /*  const onBlurInput = () => {
+     const onBlurInput = () => {
           setInput(true)
       }
       const InputValue = (e) => {
