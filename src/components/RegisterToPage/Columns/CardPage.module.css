@@ -1,0 +1,55 @@
+.MainPage {
+    background-color: rgb(228, 215, 215);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-radius: 10px;
+    width: 300px;
+    min-width: 300px
+}
+
+.MainCardPageSecond {
+    margin: 5px;
+    padding: 8px;
+    background-color: rgb(228, 215, 215);
+
+}
+.MainCardPageSecond input {
+    font-size: large;
+    text-transform: capitalize;
+    background-color: rgb(228, 215, 215);
+    border: none;
+}
+.MainCardPageSecond input:focus{
+    background-color: rgb(255, 255, 255);
+    border: none;
+    
+}
+
+.addCartBtn {
+    margin-top: 70px;
+    cursor: pointer;
+    background-color: rgb(228, 215, 215);
+    color: rgba(0, 0, 0, 0.445);
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.addCartBtn:hover {
+    color: black;
+    transform: scale(1.1);
+}
+
+.columnBtns {
+    text-align: end;
+}
+
+.EditColumnBtn {
+    border: none;
+    background-color: rgb(228, 215, 215);
+    color: rgba(0, 0, 0, 0.445);
+}
+
+.EditColumnBtn:hover {
+    color: black;
+}

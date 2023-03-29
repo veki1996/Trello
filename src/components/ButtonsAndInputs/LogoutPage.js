@@ -1,4 +1,4 @@
-import { auth } from "../../Hooks/firebase"
+import { auth } from "../../Firebase/firebase"
 import { signOut } from "firebase/auth"
 import CartCtxTF from "../Store/auth-context"
 import React, { useContext } from "react"

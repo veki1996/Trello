@@ -1,0 +1,27 @@
+.ImageC {
+    position: relative;
+    display: flex;
+    border: none;
+    cursor: pointer;
+    background-color: rgb(221, 219, 172);
+    padding: 6px;
+  
+}
+.Field{
+    margin-left: 30px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    max-width: 200px;
+    width: 200px;
+    border-radius: 5px;
+    
+}
+.TopOfTheField{
+    display: flex;
+    justify-content: space-between;
+}
+.TopOfTheField button{
+    border: none;
+}
+
+

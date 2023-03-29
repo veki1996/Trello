@@ -1,10 +1,10 @@
-import Card from "./components/Card";
-import Cart from "./components/Cart/Cart";
+import Card from "./Columns/Card";
+import Cart from "../Cart/Cart";
 import { useState, useContext } from "react";
-import CartCtxTF from "./components/Store/auth-context";
-import CartForCard from "./components/Cart/CartForCard";
-import UpdateCard from "./components/Cart/UpdateCard";
-import HorizontalMenu from "./components/Menu/Menu";
+import CartCtxTF from "../Store/auth-context";
+import CartForCard from "../Cart/CartForCard";
+import UpdateCard from "../Cart/UpdateCard";
+import HorizontalMenu from "./Menu/Menu";
 
 const RegisterAndPage = () => {
     const NewUpdateAddCard = useContext(CartCtxTF)

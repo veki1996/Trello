@@ -1,0 +1,31 @@
+.ha3{ 
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.808);
+    font-size: medium;
+    margin: 0px;
+}
+.lines{
+    display: flex;
+    background-color: rgb(252, 252, 252);
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+.lines button{
+    background-color: aliceblue;
+    color: rgba(0, 0, 0, 0.466);
+    border: none;
+   
+}
+.lines button:hover{
+    color: rgb(0, 0, 0);
+   
+}
+.lines img{
+ width: 20px;
+ height: 20px;
+}
+.images{
+  width: 200px;
+}

@@ -2,7 +2,7 @@ import { update } from "firebase/database"
 import { useContext } from "react"
 import { ref, } from 'firebase/database'
 import CartContext from "../Store/cart-context"
-import { db } from "../../Hooks/firebase"
+import { db } from "../../Firebase/firebase"
 import Clasess from './Update.module.css'
 import CartCtxTF from "../Store/auth-context"
 const UpdateBtn = (props) => {

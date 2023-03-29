@@ -1,8 +1,8 @@
-import Modal from "../Modal/Modals";
+import Modal from "../RegisterToPage/Modal/Modals";
 import CartCtxTF from "../Store/auth-context";
 import { useContext, useState, useEffect } from "react";
 import { update, ref, set } from "firebase/database";
-import { db } from "../../Hooks/firebase";
+import { db } from "../../Firebase/firebase";
 import CardName from '../Images/CardName.png'
 import Comment from '../Images/comment.png'
 import Clasess from './UpdateCard.module.css'
@@ -15,8 +15,8 @@ import ShowDetails from "../ButtonsAndInputs/ShowDetails";
 import TimeAndDate from "./TimeAndDate";
 import { uid } from "uid";
 import UpdateDateAndTime from "./UpdateDateAndTime";
-import AddToCard from "./AddToCard";
-import ImageCover from "./ImageCover";
+import AddToCard from "./OtherFields/AddToCard";
+import ImageCover from "./OtherFields/ImageCover";
 const UpdateCard = (props) => {
     const [nameV, setNameV] = useState('')
     const [details, setDetails] = useState(false)
@@ -45,7 +45,7 @@ const UpdateCard = (props) => {
     const CUuid = Ctx.UpdateValue.ColumnId
     const uuid = Ctx.UpdateValue.uuid
     const DateUid = uid()
-    
+
     const AddNameAndTitle = () => {
         update(ref(db, `/${UserUid}/${CUuid}/Names/${uuid}`), {
             name: nameV,

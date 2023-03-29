@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState, useContext } from "react";
-import { auth } from "../../Hooks/firebase";
-import CartCtxTF from "../Store/auth-context";
+import { auth } from "../../../Firebase/firebase";
+import CartCtxTF from "../../Store/auth-context";
 import Modal from "../Modal/Modals";
 import './Login.css'
 function Login(props) {

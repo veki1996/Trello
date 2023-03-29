@@ -1,8 +1,8 @@
-import Modal from "../Modal/Modals"
+import Modal from "../RegisterToPage/Modal/Modals"
 import { useState, useContext, useEffect } from "react"
 import CartContext from "../Store/cart-context"
 import { set, ref, } from 'firebase/database'
-import { db } from "../../Hooks/firebase"
+import { db } from "../../Firebase/firebase"
 import Classes from './CartForCart.module.css'
 
 import { uid } from "uid"

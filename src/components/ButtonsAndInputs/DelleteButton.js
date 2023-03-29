@@ -1,5 +1,5 @@
 import { remove } from "firebase/database"
-import { db } from "../../Hooks/firebase"
+import { db } from "../../Firebase/firebase"
 import { ref } from 'firebase/database'
 import Calsess from './Dellete.module.css'
 import dellete from '../Images/delete.png'

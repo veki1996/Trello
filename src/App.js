@@ -1,9 +1,9 @@
 import CartProvider from "./components/Store/CartProvider";
-import RegisterAndPage from "./RegisterAndPage";
-import RegisterAll from "./components/Register/RegiserAll";
+import RegisterAndPage from "./components/RegisterToPage/RegisterAndPage";
+import RegisterAll from "./components/RegisterToPage/Register/RegiserAll";
 import React, { useContext, useEffect, useState } from "react";
 import CartCtxTF from "./components/Store/auth-context";
-import { auth } from "./Hooks/firebase";
+import { auth } from "./Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 function App() {

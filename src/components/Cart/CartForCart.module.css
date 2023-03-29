@@ -1,6 +1,7 @@
 .CardForCard {
     display: flex;
     flex-direction: column;
+    margin: 1rem;
 }
 
 .CardForCard button {

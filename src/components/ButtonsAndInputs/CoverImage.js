@@ -1,10 +1,10 @@
 import Cover from '../Images/cover.png'
 import Classes from './CoverImage.module.css'
-import { storage } from '../../Hooks/firebase'
-import { useContext, useEffect, useState } from 'react';
+import { storage } from '../../Firebase/firebase'
+import { useContext,  useState } from 'react';
 import { listAll, ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 import CartCtxTF from '../Store/auth-context';
-import { refFromURL } from 'firebase/database';
+
 function CoverImage() {
     const Ctx = useContext(CartCtxTF)
     const uuid = Ctx.UpdateValue.uuid
@@ -45,7 +45,7 @@ function CoverImage() {
                         .then(() => {
                         })
                         .catch((error) => {
-                            console.log( error);
+                            console.log(error);
                         });
                 })
             })

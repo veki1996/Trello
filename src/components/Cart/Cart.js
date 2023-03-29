@@ -1,11 +1,11 @@
 import UpdateBtn from "../ButtonsAndInputs/UpdateBtn";
-import Modal from "../Modal/Modals"
+import Modal from "../RegisterToPage/Modal/Modals";
 import { useState, useContext, useEffect } from "react"
 import CartContext from "../Store/cart-context"
 import CartCtxTF from "../Store/auth-context";
 import Clasess from './Cart.module.css'
 import { set, ref } from "firebase/database";
-import { db } from "../../Hooks/firebase";
+import { db } from "../../Firebase/firebase";
 import { uid } from "uid";
 const Cart = (props) => {
     const UpdateModal = useContext(CartCtxTF)

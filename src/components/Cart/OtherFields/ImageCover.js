@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { ref,  getDownloadURL,listAll } from "firebase/storage";
-import { storage } from "../../Hooks/firebase";
+import { storage } from "../../../Firebase/firebase";
 import Classes from './ImageCover.module.css'
 const ImageCover=(props)=>{
     const [imageUrl, setImagesUrl]= useState([])
@@ -14,7 +14,7 @@ const ImageCover=(props)=>{
             })
         })
     }, []);
- console.log(imageUrl)
+
     return(
         <img className={Classes.CoverImage} src={imageUrl}/>
     )

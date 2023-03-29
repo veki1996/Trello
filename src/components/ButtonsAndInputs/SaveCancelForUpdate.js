@@ -1,6 +1,6 @@
 import Clases from './SaveCancelUpdate.module.css'
 import { update, ref } from "firebase/database";
-import { db } from "../../Hooks/firebase";
+import { db } from "../../Firebase/firebase";
 import CartCtxTF from '../Store/auth-context';
 import React, { useContext } from 'react';
 const SaveCancelUpdate = (props) => {

@@ -1,0 +1,13 @@
+.Column {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow-x: auto;
+    height: 93vh;
+}
+@media (max-width: 900px)   {
+    .Column{
+        overflow-x: scroll;
+    }
+  }
+
