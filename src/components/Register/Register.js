@@ -23,36 +23,36 @@ function Register(props) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-      
+
         if (password !== confirmPassword || username.length < 6) {
-          setErrorMessage('Username must contain more than 6 letters and passwords must match')
+            setErrorMessage('Username must contain more than 6 letters and passwords must match')
         } else {
-          try {
-            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            const user = userCredential.user;
-      
-            console.log(user);
-            await updateProfile(user, {
-              displayName: username
-            });
-            Ctx.loggedForPage()
-          } catch (error) {
-            console.log(error.message)
-            const errorParts = error.message.split('/');
-            const errorType = errorParts[1];
-            setErrorMessage(errorType)
-          }
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                console.log(user);
+                await updateProfile(user, {
+                    displayName: username
+                });
+                Ctx.loggedForPage()
+            } catch (error) {
+                console.log(error.message)
+                const errorParts = error.message.split('/');
+                const errorType = errorParts[1];
+                setErrorMessage(errorType)
+            }
         }
-      }
-      
+    }
+
     const login = async () => {
         await signOut(auth)
         props.LoginBtn(true)
     }
     useEffect(() => {
         Ctx.RegisterUid(user?.uid)
-    }, [Ctx,user?.uid])
-    
+    }, [Ctx, user?.uid])
+
     return (
         <Modal>
             <form className="form-container" onSubmit={handleSubmit}>
