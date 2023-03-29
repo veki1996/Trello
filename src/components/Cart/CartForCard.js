@@ -12,7 +12,7 @@ const CartForCard = (props) => {
     const ColumnUid = Ctx.RegisterUuid
     const [name, setName] = useState("")
     const [title, setTitle] = useState('')
-    const [uploaded, setUploaded] = useState(false)
+   // const [uploaded, setUploaded] = useState(false)
     const [currentTime, setCurrentTime] = useState(new Date())
     const CardCtx = useContext(CartContext)
     const uids = uid()

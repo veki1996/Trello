@@ -8,8 +8,7 @@ import { getDownloadURL, listAll, ref } from 'firebase/storage'
 import ImagesCard from './ImagesCard'
 const Redovi = (props) => {
     const [imagesUrl, setImagesUrl] = useState([])
-    const imageListRef = ref(storage, `images/${props.uuid}`)
-
+   
     const Ctx = useContext(CartCtxTF)
     const IliesOnClick = () => {
         Ctx.ValidateUpdate({
@@ -21,6 +20,7 @@ const Redovi = (props) => {
 
     }
     useEffect(() => {
+        const imageListRef = ref(storage, `images/${props.uuid}`)
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {
                 getDownloadURL(item).then((url) => {
@@ -28,7 +28,8 @@ const Redovi = (props) => {
                 })
             })
         })
-    }, [])
+    }, []);
+ 
     return (
 
         <div className={Clasess.lines}>
