@@ -1,6 +1,7 @@
 .MainDiv{
     display: flex;
     justify-content: flex-start;
+    padding: 1rem;
 }
 .FirstC{
     width: 80%;

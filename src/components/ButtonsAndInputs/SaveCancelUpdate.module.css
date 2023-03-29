@@ -11,9 +11,7 @@
     background-color: rgb(68, 68, 236);
     padding: 4px;
 }
-:hover{
-    background-color: rgb(45, 45, 235);
-}
+
 .Cancel{
     border: none;
     margin-left: 20px;

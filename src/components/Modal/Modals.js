@@ -1,7 +1,5 @@
 import Clasess from './Modal.module.css'
 import ReactDom from 'react-dom'
-import CartCtxTF from '../Store/auth-context'
-import { useContext } from 'react'
 const Backdrop = props => {
    
     return <div className={Clasess.backdrop} onClick={props.onClick}></div>
