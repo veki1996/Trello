@@ -4,20 +4,22 @@ import { useState, /*useContext*/ useEffect } from "react";
 //import CartCtxTF from "../Store/auth-context";
 import LogoutPage from "../../ButtonsAndInputs/LogoutPage";
 import { auth } from "../../../Firebase/firebase";
+import { useNavigate } from "react-router-dom";
 const HorizontalMenu = (props) => {
-   /* const ctx = useContext(CartCtxTF)
-    const [input, setInput] = useState(true)2*/
+    /* const ctx = useContext(CartCtxTF)
+     const [input, setInput] = useState(true)2*/
     const [displayName, setDisplayName] = useState(null);
-   /* const ShowBiggerInput = () => {
-        setInput(false)
-    }
-     const onBlurInput = () => {
-          setInput(true)
-      }
-      const InputValue = (e) => {
-          ctx.SearchingValue(e.target.value)
-      }
-  */
+    const navigate = useNavigate()
+    /* const ShowBiggerInput = () => {
+         setInput(false)
+     }
+      const onBlurInput = () => {
+           setInput(true)
+       }
+       const InputValue = (e) => {
+           ctx.SearchingValue(e.target.value)
+       }
+   */
 
 
     useEffect(() => {

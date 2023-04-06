@@ -17,6 +17,7 @@ import { uid } from "uid";
 import UpdateDateAndTime from "./UpdateDateAndTime";
 import AddToCard from "./OtherFields/AddToCard";
 import ImageCover from "./OtherFields/ImageCover";
+import ShowLabels from "./OtherFields/ShowLabels";
 const UpdateCard = (props) => {
     const [nameV, setNameV] = useState('')
     const [details, setDetails] = useState(false)
@@ -72,6 +73,7 @@ const UpdateCard = (props) => {
                             <input onChange={(e) => { setNameV(e.target.value) }} value={nameV} type="text" />
                         </div>
                         <p>In list <b>Card</b></p>
+                        <ShowLabels/>
                         <div className={Clasess.Description}>
                             <img alt="Description" src={Description} />
                             <p>Description</p>

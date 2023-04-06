@@ -1,20 +1,28 @@
-import React, { useState } from "react"
-import Classes from './CustomFields.module.css'
-const CustomFields = () => {
-    const [openClose, setOpenClose]=useState(false)
-    
+import { useState } from "react";
+import ColorInput from "./ColorsPicker";
+function CustomFields() {
+    const [colors, setColors] = useState([]);
+
+    const handleAddColor = () => {
+      setColors([...colors, "#70FF00"]);
+    };
+  
+    const handleChangeColor = (index, newColor) => {
+      const newColors = [...colors];
+      newColors[index] = newColor;
+      setColors(newColors);
+    };
     return (
-        <>
-        <button className={Classes.ImageC} onClick={()=>{setOpenClose(true)}}>Custom Fields</button>
-       {openClose && <div className={Classes.Field}>
-                <div className={Classes.TopOfTheField}>
-                <p>Custom Field</p>
-                <button onClick={()=>{setOpenClose(false)}}>X</button>
-                </div>
-                <hr/>
-            <input/>
-        </div>}
-        </>
-    )
-}
-export default CustomFields
+      <div>
+        <button onClick={handleAddColor}>Labels</button>
+        {colors.map((color, index) => (
+          <ColorInput
+            key={index}
+            defaultColor={color}
+            onChange={(newColor) => handleChangeColor(index, newColor)}
+          />
+        ))}
+      </div>
+    );
+  }
+  export default CustomFields
