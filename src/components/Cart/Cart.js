@@ -33,8 +33,6 @@ const Cart = (props) => {
         setTodo("");
         props.updateClose(false)
     };
-
-
     return (
         <Modal closeMenu={props.closeMenu}>
             <form className={Clasess.inputs}>

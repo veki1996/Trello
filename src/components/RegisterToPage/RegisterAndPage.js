@@ -5,7 +5,6 @@ import CartCtxTF from "../Store/auth-context";
 import CartForCard from "../Cart/CartForCard";
 import UpdateCard from "../Cart/UpdateCard";
 import HorizontalMenu from "./Menu/Menu";
-
 const RegisterAndPage = () => {
     const NewUpdateAddCard = useContext(CartCtxTF)
     const [modal, setModal] = useState(false)
