@@ -12,6 +12,7 @@ const Cart = (props) => {
     const CartCtx = useContext(CartContext);
     const [todo, setTodo] = useState("");
     const MTF = UpdateModal.isLoggedIn
+
     useEffect(() => {
         if (MTF) {
             setTodo(CartCtx.items);
@@ -33,6 +34,7 @@ const Cart = (props) => {
         setTodo("");
         props.updateClose(false)
     };
+   
     return (
         <Modal closeMenu={props.closeMenu}>
             <form className={Clasess.inputs}>

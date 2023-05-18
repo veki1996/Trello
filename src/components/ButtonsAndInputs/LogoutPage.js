@@ -9,7 +9,7 @@ const LogoutPage = ()=>{
     const navigate = useNavigate()
     const login = async () => {
         await signOut(auth)
-        navigate('/login')
+        navigate('/*')
         Ctx.loggedOutPage()
        
     }

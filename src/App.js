@@ -3,13 +3,14 @@ import RegisterAndPage from "./components/RegisterToPage/RegisterAndPage";
 import React, { useEffect, useState } from "react";
 import { auth } from "./Firebase/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Login from "./pages/Register/Login";
 import Register from "./pages/Register/Register";
 
 function App() {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate()
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -20,13 +21,14 @@ function App() {
   if (isLoading) {
     return <div>Loading...</div>;
   }
+ 
   return (
 
     <CartProvider>
       <div className="app">
         <Routes>
-          {user && <Route path="/*" element={<RegisterAndPage />} />}
-          <Route path="login" element={<Login />} />
+          {user && <Route path="mainPage" element={<RegisterAndPage />} />}
+          <Route path="/*" element={<Login />} />
           <Route path="register" element={<Register />} />
 
         </Routes>
