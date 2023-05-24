@@ -24,7 +24,8 @@ function ColorInput(props) {
     const onSavePicker = () => {
         update(ref(db, `/${UserUid}/${columnID}/Names/${cardUuid}/Labels/${ColorUid}`), {
             title: title,
-            color: color
+            color: color,
+            uuid:ColorUid
         })
         setShowPicker(false)
     }

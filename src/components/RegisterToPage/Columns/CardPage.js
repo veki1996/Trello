@@ -34,6 +34,7 @@ const CardPage = (props) => {
            todo:e.target.value
         })
     }
+   
     const names = props.name ? Object.values(props.name) : [];
     let names2 = names.map((item) => <Rows lines={item.name} title={item.title} key={item.uuid} columnUUid={props.todo.uuid} uuid={item.uuid} />)
     return (

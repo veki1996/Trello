@@ -62,6 +62,7 @@ const UpdateCard = (props) => {
         e.preventDefault()
         setOpenDes(true)
     }
+ 
     return (
         <Modal closeMenu={() => { Ctx.onCloseIlises() }}>
             <ImageCover ImageUUid={uuid} />

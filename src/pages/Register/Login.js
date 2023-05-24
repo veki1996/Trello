@@ -27,7 +27,7 @@ function Login(props) {
         email,
         password)
       Ctx.RegisterUid(auth.lastNotifiedUid)
-      navigate('/*')
+      navigate('/mainPage')
       Ctx.loggedForPage()
 
     } catch (error) {

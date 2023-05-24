@@ -35,7 +35,7 @@ function Register(props) {
             });
             Ctx.loggedForPage()
             Ctx.RegisterUid(user?.uid)
-           navigates('/registerPage')
+           navigates('/mainPage')
           } catch (error) {
             console.log(error.message)
             const errorParts = error.message.split('/');
@@ -46,7 +46,7 @@ function Register(props) {
       }
       
     const login = async () => {
-        navigates('/login')
+        navigates('/*')
         await signOut(auth)
      
     }
