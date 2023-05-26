@@ -1,3 +1,16 @@
-.main{
+.main {
     display: flex;
+
 }
+
+.main p {
+    padding: '10px';
+    border-radius: '10px';
+}
+
+.ColorPicker {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+}
+
