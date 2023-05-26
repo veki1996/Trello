@@ -2,7 +2,8 @@ import { remove, ref } from "firebase/database"
 import { db } from "../../Firebase/firebase"
 import { useContext } from "react"
 import CartCtxTF from "../Store/auth-context"
-
+import Classes from './DelleteField.module.css'
+import Del from '../Images/delete.png'
 const DelleteField = (props) => {
     const Ctx = useContext(CartCtxTF)
     const UserID = Ctx.RegisterUuid
@@ -13,9 +14,10 @@ const DelleteField = (props) => {
         e.preventDefault()
         remove(ref(db, `/${UserID}/${ColumnID}/Names/${CardID}/Labels/${props.uuid}`))
         props.UpdateModal(true)
+
     }
     return (
-        <button onClick={DelleteField}>X</button>
+        <button className={Classes.DelleteFieldBtn} onClick={DelleteField}><img src={Del} alt="delBtn"/></button>
     )
 }
 export default DelleteField
