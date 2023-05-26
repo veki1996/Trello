@@ -26,7 +26,7 @@ const ShowLabels = () => {
     }, [UpdateModall])
 
     return (
-        <div>
+        <div style={{display:'flex'}}>
             {values.map((value, index) => (
                 <ColorAndTitle
                     UpdateModal={(()=>{setUpdateModal(UpdateModall +1)})}
