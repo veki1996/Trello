@@ -14,6 +14,7 @@ const Cart = (props) => {
     const MTF = UpdateModal.isLoggedIn
 
     useEffect(() => {
+        // Update the todo state when CartCtx.items changes
         if (MTF) {
             setTodo(CartCtx.items);
         }

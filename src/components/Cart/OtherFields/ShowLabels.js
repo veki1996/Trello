@@ -12,6 +12,7 @@ const ShowLabels = () => {
     const [values, setValues] = useState([])
     const [UpdateModall, setUpdateModal]=useState(0)
     useEffect(() => {
+          // Fetch the labels data from the database
         get(ref(db, `/${UserUid}/${columnID}/Names/${cardUuid}/Labels`)).then((snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val()

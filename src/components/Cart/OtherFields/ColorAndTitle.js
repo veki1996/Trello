@@ -28,7 +28,10 @@ const ColorAndTitle = (props) => {
   }
 
   useEffect(() => {
+    // Add event listener when the component mounts
     document.addEventListener('click', handleClickOutside);
+
+    // Clean up the event listener when the component unmounts
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
@@ -47,6 +50,7 @@ const ColorAndTitle = (props) => {
   }
 
   useEffect(() => {
+    // Update the Firebase database when title or color changes
     update(ref(db, `/${UserUid}/${columnID}/Names/${cardUuid}/Labels/${props.uuid}`), {
       title: title,
       color: newColor,
@@ -56,14 +60,17 @@ const ColorAndTitle = (props) => {
 
   return (
     <div onClick={showColor} className={Classes.main}>
+      {/* Input field for title */}
       <input
         className="Paraf"
-        style={{ backgroundColor: newColor, border:'none', width:'60px' }}
+        style={{ backgroundColor: newColor, border: 'none', width: '60px' }}
         type="text"
         defaultValue={title}
         onChange={handleTitleChange}
       />
+      {/* Delete field component */}
       <DelleteField UpdateModal={props.UpdateModal} uuid={props.uuid} />
+      {/* Color picker */}
       <div ref={diVRef} className={Classes.ColorPicker}>
         {colorShow && <ChromePicker color={newColor} onChange={handleChange} />}
       </div>
@@ -72,4 +79,3 @@ const ColorAndTitle = (props) => {
 }
 
 export default ColorAndTitle
-

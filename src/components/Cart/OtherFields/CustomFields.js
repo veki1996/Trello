@@ -3,10 +3,11 @@ import ColorInput from "./ColorsPicker";
 function CustomFields() {
     const [colors, setColors] = useState([]);
 
+  // Add a new color to the list
     const handleAddColor = () => {
       setColors([...colors, "#70FF00"]);
     };
-  
+  // Handle color change for a specific index
     const handleChangeColor = (index, newColor) => {
       const newColors = [...colors];
       newColors[index] = newColor;
