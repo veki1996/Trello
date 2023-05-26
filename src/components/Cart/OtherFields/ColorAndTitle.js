@@ -6,7 +6,7 @@ import { db } from "../../../Firebase/firebase"
 import { update, ref } from "firebase/database"
 import CartCtxTF from "../../Store/auth-context"
 import { useContext } from "react"
-import { uid } from "uid"
+
 
 const ColorAndTitle = (props) => {
   const [colorShow, setColorShow] = useState(false)
@@ -35,6 +35,7 @@ const ColorAndTitle = (props) => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const showColor = () => {

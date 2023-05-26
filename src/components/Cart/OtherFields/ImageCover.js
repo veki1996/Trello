@@ -17,10 +17,11 @@ const ImageCover=(props)=>{
                 })
             })
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return(
-        <img className={Classes.CoverImage} src={imageUrl}/>
+        <img alt="coverPhoto" className={Classes.CoverImage} src={imageUrl}/>
     )
 }
 export default ImageCover
