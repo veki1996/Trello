@@ -12,6 +12,7 @@ body {
   background-position: center;
   background-image: url('./components/Images/slika1.jpg');
   background-repeat:inherit;
+  overflow-y: hidden;
 }
 
 .app {
