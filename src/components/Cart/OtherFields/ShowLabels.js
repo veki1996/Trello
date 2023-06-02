@@ -3,6 +3,7 @@ import CartCtxTF from "../../Store/auth-context"
 import { db } from "../../../Firebase/firebase"
 import { get, ref } from "firebase/database"
 import ColorAndTitle from "./ColorAndTitle"
+import Clasess from './ShowLabels.module.css'
 
 const ShowLabels = () => {
     const Ctx = useContext(CartCtxTF)
@@ -10,9 +11,9 @@ const ShowLabels = () => {
     const UserUid = Ctx.RegisterUuid
     const cardUuid = Ctx.UpdateValue.uuid
     const [values, setValues] = useState([])
-    const [UpdateModall, setUpdateModal]=useState(0)
+    const [UpdateModall, setUpdateModal] = useState(0)
     useEffect(() => {
-          // Fetch the labels data from the database
+        // Fetch the labels data from the database
         get(ref(db, `/${UserUid}/${columnID}/Names/${cardUuid}/Labels`)).then((snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val()
@@ -27,17 +28,19 @@ const ShowLabels = () => {
     }, [UpdateModall])
 
     return (
-        <div style={{display:'flex'}}>
-            {values.map((value, index) => (
-                <ColorAndTitle
-                    UpdateModal={(()=>{setUpdateModal(UpdateModall +1)})}
-                    key={index}
-                    color={value.color}
-                    title={value.title}
-                    uuid={value.uuid}
-                />
-            ))}
-        </div>
+        
+            <div className={Clasess.GridContainer}>
+                {values.map((value, index) => (
+                    <ColorAndTitle
+                        UpdateModal={() => { setUpdateModal(UpdateModall + 1) }}
+                        key={index}
+                        color={value.color}
+                        title={value.title}
+                        uuid={value.uuid}
+                    />
+                ))}
+            </div>
+       
     )
 }
 
