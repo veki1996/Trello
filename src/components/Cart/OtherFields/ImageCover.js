@@ -21,7 +21,7 @@ const ImageCover=(props)=>{
     }, []);
 
     return(
-        <img alt="coverPhoto" className={Classes.CoverImage} src={imageUrl}/>
+        <img  className={Classes.CoverImage} src={imageUrl}/>
     )
 }
 export default ImageCover
