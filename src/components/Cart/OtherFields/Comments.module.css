@@ -3,12 +3,23 @@
   .commentsinput {
    display: flex;
    border:none;
-   margin-bottom: 100px;
+   margin-bottom: 50px;
+   margin-top: 15px;
+
   }
   .TextEditor{
     background-color: white;
     border: none;
+    width: 100%;
 }
+.InputToHide{
+  width: 100%;
+  border-radius: 20px;
+  border: none;
+  padding-left: 10px;
+  background-color: rgb(221, 219, 172);
+}
+
   .commentsbutton {
     background-color: #61bd4f;
     color: #fff;
@@ -21,11 +32,15 @@
   .portfolioImage{
     height: 50px;
   }
-  .ql-container {
-    border: none;
-    height: 0px;
-  }
+
   .commentsbutton:hover {
     background-color: #5aac44;
+  }
+  .CommentBtn{
+    margin-top: 10px;
+    background-color: rgb(68, 68, 236);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
   }
   
