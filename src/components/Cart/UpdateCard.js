@@ -17,7 +17,10 @@ import { uid } from "uid";
 import UpdateDateAndTime from "./UpdateDateAndTime";
 import AddToCard from "./OtherFields/AddToCard";
 import ImageCover from "./OtherFields/ImageCover";
+import Comments from "./OtherFields/Comments";
 import ShowLabels from "./OtherFields/ShowLabels";
+
+
 const UpdateCard = (props) => {
     const [nameV, setNameV] = useState('')
     const [details, setDetails] = useState(false)
@@ -64,7 +67,7 @@ const UpdateCard = (props) => {
     }
  
     return (
-        <Modal closeMenu={() => { Ctx.onCloseIlises() }}>
+        <Modal className={Clasess.UpdateCardModal} closeMenu={() => { Ctx.onCloseIlises() }}>
             <ImageCover ImageUUid={uuid} />
             <div className={Clasess.MainDiv}>
                 <div className={Clasess.FirstC}>
@@ -93,6 +96,9 @@ const UpdateCard = (props) => {
                                 <p>Activity</p>
                             </div>
                             <ShowDetails ShowDetails={(val) => { setDetails(val) }} />
+                        </div>
+                        <div>
+                        <Comments/>
                         </div>
                         <button onClick={AddNameAndTitle}>+ Update Card </button>
                         {details && <TimeAndDate />}
