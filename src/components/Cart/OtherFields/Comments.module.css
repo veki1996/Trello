@@ -1,0 +1,31 @@
+
+  
+  .commentsinput {
+   display: flex;
+   border:none;
+   margin-bottom: 100px;
+  }
+  .TextEditor{
+    background-color: white;
+    border: none;
+}
+  .commentsbutton {
+    background-color: #61bd4f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin-top: 8px;
+    cursor: pointer;
+  }
+  .portfolioImage{
+    height: 50px;
+  }
+  .ql-container {
+    border: none;
+    height: 0px;
+  }
+  .commentsbutton:hover {
+    background-color: #5aac44;
+  }
+  
